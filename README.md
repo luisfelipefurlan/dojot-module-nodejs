@@ -150,7 +150,7 @@ configuration. They are:
 export KAFKA_HOSTS = "kafka:9092"
 export KAFKA_GROUP_ID = "dojot-module"
 export DATA_BROKER_URL = "http://data-broker"
-export KEYCLOAK_URL = "http://keycloak:8080"
+export KEYCLOAK_URL = "http://apigw:8000/auth"
 export KEYCLOAK_USER = "admin"
 export KEYCLOAK_PASSWORD = "admin"
 export DEVICE_MANAGER_URL = "http://device-manager:5000"
