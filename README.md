@@ -7,6 +7,9 @@
 
 Common library to be used in dojot modules.
 
+**Attention**: As of version v0.2, this library no longer has integration with the old "auth" service, but with the "keycloak" service.
+Be aware that the environment variables `KEYCLOAK_USER` and `KEYCLOAK_PASSWORD` will probably have to be passed to services that use this library. This user should be able to get the existing realm lists from keycloak.
+
 ## Overview
 
 This library is intended to handle all the necessary operations that a service
