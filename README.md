@@ -7,6 +7,9 @@
 
 Common library to be used in dojot modules.
 
+**Attention**: As of version v0.2, this library no longer has integration with the old "auth" service, but with the "keycloak" service.
+Be aware that the environment variables `KEYCLOAK_USER` and `KEYCLOAK_PASSWORD` will probably have to be passed to services that use this library. This user should be able to get the existing realm lists from keycloak.
+
 ## Overview
 
 This library is intended to handle all the necessary operations that a service
@@ -103,7 +106,7 @@ should have the following attributes at least:
     "connectionRetries": 5,
   },
   "keycloak": {
-      "basePath": "http://apigw:8000/auth",
+      "basePath": "http://keycloak:8080/auth",
       "timeoutSleep": 5,
       "connectionRetries": 5,
       "ignoreRealm": "master",
@@ -151,7 +154,7 @@ configuration. They are:
 export KAFKA_HOSTS = "kafka:9092"
 export KAFKA_GROUP_ID = "dojot-module"
 export DATA_BROKER_URL = "http://data-broker"
-export KEYCLOAK_URL = "http://keycloak:8080"
+export KEYCLOAK_URL = "http://keycloak:8080/auth"
 export KEYCLOAK_USER = "admin"
 export KEYCLOAK_PASSWORD = "admin"
 export DEVICE_MANAGER_URL = "http://device-manager:5000"
