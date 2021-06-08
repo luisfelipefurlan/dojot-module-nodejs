@@ -106,7 +106,7 @@ should have the following attributes at least:
     "connectionRetries": 5,
   },
   "keycloak": {
-      "basePath": "http://apigw:8000/auth",
+      "basePath": "http://keycloak:8080/auth",
       "timeoutSleep": 5,
       "connectionRetries": 5,
       "ignoreRealm": "master",
