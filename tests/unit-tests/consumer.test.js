@@ -79,7 +79,7 @@ describe("Kafka consumer", () => {
         // << Tested code
 
         // >> Results verification
-        expect(Kafka.KafkaConsumer).toHaveBeenCalledWith(mockConfig.kafka.consumer,{});
+        expect(Kafka.KafkaConsumer).toHaveBeenCalledWith(mockConfig.kafka.consumer);
         expect(consumer.consumer).toBeDefined();
         expect(consumer.isReady).toBeFalsy();
         expect(consumer.messageCallbacks).toEqual({});
@@ -439,7 +439,7 @@ describe("Kafka consumer", () => {
     });
 
     it("should unsubscribe sucessfully from a topic", () => {
-        
+
         /**
          * This test subscribe and unsubscribe to a topic then check if topic
          * where deleted after unsubscribe
@@ -463,8 +463,8 @@ describe("Kafka consumer", () => {
 
     it("should remove from subcription list even consumer state", () => {
         /**
-         * This test try to subscribe then unsubscribe 
-         * to a topic then check if topic where deleted 
+         * This test try to subscribe then unsubscribe
+         * to a topic then check if topic where deleted
          * after unsubscribe, topic should be on subsciption list
          * deleted even of consumer state change
          */

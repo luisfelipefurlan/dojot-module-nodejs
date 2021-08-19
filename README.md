@@ -7,9 +7,6 @@
 
 Common library to be used in dojot modules.
 
-**Attention**: As of version v0.2, this library no longer has integration with the old "auth" service, but with the "keycloak" service.
-Be aware that the environment variables `KEYCLOAK_USER` and `KEYCLOAK_PASSWORD` will probably have to be passed to services that use this library. This user should be able to get the existing realm lists from keycloak.
-
 ## Overview
 
 This library is intended to handle all the necessary operations that a service
@@ -105,18 +102,11 @@ should have the following attributes at least:
     "timeoutSleep": 2,
     "connectionRetries": 5,
   },
-  "keycloak": {
-      "basePath": "http://keycloak:8080/auth",
-      "timeoutSleep": 5,
-      "connectionRetries": 5,
-      "ignoreRealm": "master",
-      "credentials": {
-        "username": "admin",
-        "password": "admin",
-        "grantType": "password",
-        "clientId":  "admin-cli",
-      }
-    },
+  "auth": {
+    "url": "http://auth:5000",
+    "timeoutSleep": 5,
+    "connectionRetries": 5,
+  },
   "deviceManager": {
     "url": "http://device-manager:5000",
     "timeoutSleep": 5,
@@ -154,9 +144,7 @@ configuration. They are:
 export KAFKA_HOSTS = "kafka:9092"
 export KAFKA_GROUP_ID = "dojot-module"
 export DATA_BROKER_URL = "http://data-broker"
-export KEYCLOAK_URL = "http://keycloak:8080/auth"
-export KEYCLOAK_USER = "admin"
-export KEYCLOAK_PASSWORD = "admin"
+export AUTH_URL = "http://auth:5000"
 export DEVICE_MANAGER_URL = "http://device-manager:5000"
 export DOJOT_MANAGEMENT_USER = "dojot-management"
 export DOJOT_MANAGEMENT_TENANT = "dojot-management"

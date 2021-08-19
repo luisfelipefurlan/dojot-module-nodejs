@@ -66,6 +66,9 @@ typings/
 # vscode IDE
 .vscode/
 
+# webstorm IDE
+.idea/
+
 # documentation folder
 docs/
 
