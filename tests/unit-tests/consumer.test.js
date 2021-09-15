@@ -23,6 +23,7 @@ describe("Kafka consumer", () => {
     var mockConfig = {
         kafka: {
             consumer: "consumer-config",
+            topic: "topic-config",
             dojot: {
                 subscriptionHoldoff: 10,
             },
@@ -79,7 +80,9 @@ describe("Kafka consumer", () => {
         // << Tested code
 
         // >> Results verification
-        expect(Kafka.KafkaConsumer).toHaveBeenCalledWith(mockConfig.kafka.consumer);
+        expect(Kafka.KafkaConsumer).toHaveBeenCalledWith(
+            mockConfig.kafka.consumer,
+            mockConfig.kafka.topic);
         expect(consumer.consumer).toBeDefined();
         expect(consumer.isReady).toBeFalsy();
         expect(consumer.messageCallbacks).toEqual({});

@@ -7,6 +7,8 @@
 
 Common library to be used in dojot modules.
 
+**Attention**: From version 0.2.x onwards, we'd have planned to use Keycloak instead of auth service, but we changed our plans. Therefore, we reverted the changes in version 0.3.0.
+
 ## Overview
 
 This library is intended to handle all the necessary operations that a service
